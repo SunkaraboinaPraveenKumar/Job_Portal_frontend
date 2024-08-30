@@ -12,8 +12,8 @@ const AppliedJobTable = () => {
     }
 
     return (
-        <div>
-            <Table>
+        <div className="overflow-x-auto">
+            <Table className="min-w-full">
                 <TableCaption>A list of your applied jobs</TableCaption>
                 <TableHeader>
                     <TableRow>
@@ -27,11 +27,15 @@ const AppliedJobTable = () => {
                     {
                         allAppliedJobs.map((appliedJob) => (
                             <TableRow key={appliedJob._id}>
-                                <TableCell>{appliedJob?.createdAt?.split("T")[0]}</TableCell>
-                                <TableCell>{appliedJob.job?.title}</TableCell>
-                                <TableCell>{appliedJob.job?.company?.name}</TableCell>
-                                <TableCell className="text-right">
-                                    <Badge className={`${appliedJob?.status === "rejected" ? 'bg-red-400' : appliedJob.status === 'pending' ? 'bg-gray-400' : 'bg-green-400'}`}>
+                                <TableCell className="text-sm">{appliedJob?.createdAt?.split("T")[0]}</TableCell>
+                                <TableCell className="text-sm">{appliedJob.job?.title}</TableCell>
+                                <TableCell className="text-sm">{appliedJob.job?.company?.name}</TableCell>
+                                <TableCell className="text-right text-sm">
+                                    <Badge className={`${
+                                        appliedJob?.status === "rejected" ? 'bg-red-400' :
+                                        appliedJob.status === 'pending' ? 'bg-gray-400' :
+                                        'bg-green-400'
+                                    }`}>
                                         {appliedJob.status.toUpperCase()}
                                     </Badge>
                                 </TableCell>
