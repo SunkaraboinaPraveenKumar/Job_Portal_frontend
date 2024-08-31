@@ -37,7 +37,7 @@ const Navbar = () => {
     return (
         <div className='bg-white relative z-50 shadow-lg'>
             <div className='flex items-center justify-between mx-auto max-w-7xl h-16 px-4 sm:px-6 lg:px-8'>
-                <h1 className='text-2xl font-bold'>Job<span className='text-[#F83002]'>Portal</span></h1>
+                <h1 className='text-2xl font-bold'>Job<span className='text-[#F83002]'>Seeko</span></h1>
                 <div className='lg:hidden'>
                     <Button variant="ghost" onClick={toggleMobileMenu}>
                         {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
